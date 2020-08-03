@@ -11,17 +11,11 @@ import { HEROES } from '../mock-heroes';
 })
 export class HeroesComponent implements OnInit {
   heroes: Hero[];
-  selectedHero: Hero;
 
   constructor(private heroService: HeroService, private messageService: MessageService) { }
 
   ngOnInit(): void {
     this.getHeroes();
-  }
-
-  onSelect(hero: Hero) {
-    this.selectedHero = hero;
-    this.messageService.add(`HeroesComponent: selected hero id=${hero.id}`);
   }
 
   getHeroes(): void {
